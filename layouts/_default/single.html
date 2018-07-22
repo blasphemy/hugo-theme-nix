@@ -15,6 +15,18 @@
             <div class="post-content">
                 {{ .Content }}
             </div>
+            {{ if .Params.tags }}
+              <div>
+                <h4>
+                  Tags
+                </h4>
+                <div>
+                  {{ range .Params.tags}}
+                  <a href="/tags/{{ . | urlize}}">{{ . }}</a>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
             {{ if (isset .Params "nocomments")  }}
             {{ else }}
             <div class="post-comments">
