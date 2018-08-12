@@ -4,16 +4,20 @@
 
 <!-- meta tags for rich previews-->
 <meta name="og:title" content="{{ .Title }}">
+<meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:card" content="summary">
 {{if .Description}}
 <meta name="description" content="{{ .Description }}">
 <meta property="og:description" content="{{ .Description }}">
+<meta name="twitter:description" content="{{ .Description }}">
 {{ else }}
 <meta name="description" content="{{ .Summary }}">
 <meta property="og:description" content="{{ .Summary }}">
+<meta name="twitter:description" content="{{ .Summary }}">
 {{end }}
-{{ if .Params.og_image }}
-<meta property="og:image" content="{{ .Params.og_image | absURL }}">
+{{ if .Params.featured_image }}
+<meta property="og:image" content="{{ .Params.featured_image | absURL }}">
+<meta name="twitter:image" content="{{ .Params.featured_image | absURL}}">
 {{ end }}
 
 <!-- JQuery -->
