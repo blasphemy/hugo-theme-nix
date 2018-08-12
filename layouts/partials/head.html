@@ -4,8 +4,9 @@
 
 <!-- meta tags for rich previews-->
 <meta name="og:title" content="{{ .Title }}">
-{{ if .Description }}
-<meta name="description" content="{{ .Description }}">
+{{ if .Summary }}
+<meta name="description" content="{{ .Summary }}">
+<meta property="og:description" content="{{ .Summary }}">
 {{ end }}
 
 <!-- JQuery -->
